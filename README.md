@@ -26,3 +26,40 @@ Construction notes is here.
 
 ### Step 1, UART Bootstrap
 ![uartbootstrap](TinyZ280_UART_bootstrap_topview.jpg)
+The picture above shows what need to be populated to support the UART bootstrap configuration. The serial port is set to 57600 baud, odd parity, 8 data bit, 1 stop. The operating guide for UART Bootstrap configuration is here.
+
+This is [Altera EPM7128 design for UART bootstrap](TinyZ280_CPLD_tinyzram.pdf) in PDF schematic. This is the [programming file](tinyzram_program_file.zip).
+
+When reset button is pressed or when initially powered up, the board expects a 256-byte serial binary data stream. After 256 bytes of data is received, Z280 will start program execution at location 0. TinyLoad is the 256-byte boot program; it has three functions:
+
+1. It clears memory from 0x100 to 0xFFFF to zero.
+2. It expects Intel hex file and save it to memory specified by the load address. It will check every record and print a period (.) if the checksum matches or question mark (?) if the checksum does not match. It will output 'U' for unrecognized record format and 'X' for end of record.
+3. It recognizes the 'G' command and transfers the control to the 4-byte address follow the 'G' command. Please note: the 4-byte address is not echo back on the terminal, only the 'G' followed by a blank is displayed.
+4. 
+When TinyLoad is successfully loaded and executing, it will display the following message:
+```
+TinyLoad 1
+G xxxx when done
+```
+This is [TinyLoad binary](tinyload_binary.zip). This is [TinyLoad source](tinyload_asm.zip).
+
+Glitchmon is a small monitor that display/modify memory, display/modify I/O port, and jump to specified address. It is derived from Glitchwork: https://github.com/chapmajs/glitchworks_monitor
+
+Glitchmon hex load file is here. Glitchmon source is here.
+
+cpm22all is CP/M ver 2.2 source in Z80 mnemonics. The CCP and BDOS are downloaded from cpm.z80.de: http://cpm.z80.de/download/cpm2-asm.zip
+
+cpm22all hex load file is here. cpm22all source is here.
+
+Step 2, CF Bootstrap
+(2/11/18) CF Bootstrap is working. The pc board is modified to add a jumper that switch between UART bootstrap and CF bootstrap. The reset connection (T14 & T15) is cut and a new output signal from CPLD is now control the reset of the Z280. This is all the physical modifications required. There are significant more firmware and software changes:
+
+New CPLD with CF bootstrap state machine (CFinit) and modified memory map. Here is theschematic and the programming file. The state machine design is rather convoluted. Here is the theory of operation.
+
+CF Bootstrap software is evolving. The current approach is a small (~128 byte) cold bootstrap code located in boot sector of a CF. Before Z280 reset is released, the CFinit state machine configured the CF to stream cold bootstrap code out to CF's 16-bit data port. After reset Z280 will execute the code stream which copy a small boot loader into 0x1000 and jump to it which, in turn, load data from sector 2 and 3 and execute. Here is thecold bootstrap code. Here is the utility program to copy cold bootstrap into boot sector. Another utility program to copy software into sector 2 & 3 of CF. The two utility programs will be combined later.
+
+Step 3, CF Bootstrap with DRAM
+Blah, blah, blah
+
+Final Step, Putting it all together
+After the various steps of incremental development, this is the end product.
