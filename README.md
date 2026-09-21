@@ -4,7 +4,7 @@ I'm new to Z80. I looked at Z280 more closely after a round of interesting discu
 
 ![topview](TinyZ280_topview.jpg)
 ## Design Concept
-Schematic of TinyZ280. There are 4 different ways to boot up the Z280:
+[Schematic of TinyZ280](tinyz280_scm.pdf). There are 4 different ways to boot up the Z280:
 
 1. UART bootstrap. This method is based on Z280's UART bootstrap feature where nWAIT signal is asserted and the value 0x40 is presented on the data bus AD[7:0] when nRESET signal is negated. This will cause Z280 to enter its UART bootstrap mode where it will configure DMA channel 0 to transfer 256 bytes of data from UART to memory location 0-0xFF. Once 256 bytes of data are received, it will release the reset to Z280 CPU and program execution will start at location 0. The serial baud rate is determined by the clock to counter channel 1 divided by 16. The parity is set to odd. The current serial configuration is 57600, odd parity, 8 data bits, 1 stop. This configuration requires either SIMM DRAM or two 128Kx8 RAM in U3 and U4
 2. Flash memory. This is the conventional method of booting up. Jumper block J3-J6 are configured as J3-J4, J5-J6, and two 29F010 flash memory devices are programed with the appropriate software and inserted in U3 and U4. This configuration requires SIMM DRAM populated as the volatile memory.
@@ -20,8 +20,9 @@ The key to the design is Altera's EPM7128 CPLD. Different configurations will re
 
 ## Implementation
 ![base](TinyZ280_unpopulated_baseboard.jpg)
-PC board design files are here. The pc board is 100mm x 100mm, 1.2mm thick. It was manufactured by Seeed Studio.
+[PC board design files](tinyz280_r0.zip) are here. The pc board is 100mm x 100mm, 1.2mm thick. It was manufactured by Seeed Studio.
 
 Construction notes is here.
 
 ### Step 1, UART Bootstrap
+![uartbootstrap](TinyZ280_UART_bootstrap_topview.jpg)
