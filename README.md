@@ -45,11 +45,11 @@ This is [TinyLoad binary](tinyload_binary.zip). This is [TinyLoad source](tinylo
 
 Glitchmon is a small monitor that display/modify memory, display/modify I/O port, and jump to specified address. It is derived from Glitchwork: https://github.com/chapmajs/glitchworks_monitor
 
-Glitchmon hex load file is here. Glitchmon source is here.
+This is [Glitchmon hex load](glitchmon_hex_loadfile.zip). This is [Glitchmon source](glitchmonhcs_asm.zip).
 
 cpm22all is CP/M ver 2.2 source in Z80 mnemonics. The CCP and BDOS are downloaded from cpm.z80.de: http://cpm.z80.de/download/cpm2-asm.zip
 
-cpm22all hex load file is here. cpm22all source is here.
+This is [cpm22all hex load file](cpm22all_hex_loadfile.zip) in Intel Hex format. This is [cpm22all assembly source](cpm22all_asm.zip).
 
 Step 2, CF Bootstrap
 (2/11/18) CF Bootstrap is working. The pc board is modified to add a jumper that switch between UART bootstrap and CF bootstrap. The reset connection (T14 & T15) is cut and a new output signal from CPLD is now control the reset of the Z280. This is all the physical modifications required. There are significant more firmware and software changes:
