@@ -61,5 +61,5 @@ CF Bootstrap software is evolving. The current approach is a small (~128 byte) c
 Step 3, CF Bootstrap with DRAM
 Blah, blah, blah
 
-Final Step, Putting it all together
+[Final Step](Final_assembly/readme.md), Putting it all together
 After the various steps of incremental development, this is the end product.
