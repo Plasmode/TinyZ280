@@ -106,7 +106,7 @@ This completes the initialization of a new CF disk.
 - CP/M2.2 DRI distribution image
 - CP/M3 distribution image
 ### Manual
-- Getting Started Guide
+- [Getting Started](Manuals/Getting_started.md) Guide
 - ZZMon operating manual
 - TinyZ280 software build procedures
 - Creating a new CF disk for TinyZ280
