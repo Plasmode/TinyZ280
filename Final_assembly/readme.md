@@ -89,7 +89,7 @@ Press the reset button to exit CP/M 2.2 to ZZMon and type
 This completes the initialization of a new CF disk.
 
 ## Design Files
-- TinyZ280 schematic with annotation of engineering changes
+- TinyZ280 [schematic with annotation](tinyz280_scm_annotated.pdf) of engineering changes
 - Gerber photoplots. The boards were manufactured by Seeed Studio
 - Engineering Changes
 - CPLD design file.
