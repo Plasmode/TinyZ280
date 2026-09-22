@@ -140,18 +140,18 @@ SUBMIT.COM
 SYSGEN.COM
 XSUB.COM
 ```
-CPM22 distribution files are successfully copied to drive B.
+**CPM22 distribution files are successfully copied to drive B.**
 
-Install CP/M 3 distribution files
-Load the CPM3 distribution files.
-It is a big file, taking 4 minutes and 40 seconds to load.
-
+## Install CP/M 3 distribution files
+**Load the CPM3 distribution files.**
+**It is a big file, taking 4 minutes and 40 seconds to load.**
+```
 e>TinyZZ Monitor v0.9 4/16/18
 
 >E………………………………………………………………long response, truncated……………………………………………..X
-
-The distribution files are in drive E. Boot with CPM22 and copy drive E to drive A.
-
+```
+**The distribution files are in drive E. Boot with CPM22 and copy drive E to drive A.**
+```
 >boot CP/M
 2–CP/M2.2,
 3–CP/M3: 2 press Return to execute command
@@ -238,10 +238,10 @@ TRACE.UTL
 TYPE.COM
 XMODEM.COM
 XREF.COM
-
-CPM3 is now in drive A.
-The disk is now bootable with CPM3
-
+```
+**CPM3 is now in drive A.**
+**The disk is now bootable with CPM3**
+```
 >TinyZZ Monitor v0.9 4/16/18
 
 >boot CP/M
@@ -272,11 +272,11 @@ A: PIP COM : PORTS LIB : PUT COM : RANDOM ASM : RENAME COM
 A: RESBDOS3 SPR : RMAC COM : SAVE COM : SCB REL : SET COM
 A: SETDEF COM : SHOW COM : SID COM : SUBMIT COM : TRACE UTL
 A: TYPE COM : XMODEM COM : XREF COM
-
-Install optional game files
-load the Zork123 games to drive E and copy to drive D.
-It is also a big file taking 4 minutes 30 seconds to load.
-
+```
+## Install optional game files
+**load the Zork123 games to drive E and copy to drive D.**
+**It is also a big file taking 4 minutes 30 seconds to load.**
+```
 A>TinyZZ Monitor v0.9 4/16/18
 
 >E………………………………………………………………long response, truncated……………………………………………..X
@@ -295,9 +295,9 @@ b>pip d:=e:*.pkg
 
 COPYING -
 ZORK123.PKG
-
-Upload depkg.com via xmodem to decompress zork123.pkg
-
+```
+**Upload depkg.com via xmodem to decompress zork123.pkg**
+```
 b>dir
 B: ASM COM : BIOS ASM : CBIOS ASM : DDT COM
 B: DEBLOCK ASM : DISKDEF LIB : DUMP COM : DUMP ASM
@@ -415,3 +415,4 @@ There is a small mailbox here.
 Your score is 0 (total of 350 points), in 0 moves.
 This gives you the rank of Beginner.
 Do you wish to leave the game? (Y is affirmative): >y
+```
