@@ -1,7 +1,7 @@
 # TinyZ280 Engineering Changes
-The TinyZ280 schematic contains annotated Engineering Changes. However, there are additional changes that are not described in the schematic. All the engineering changes are applied at the solder side of the TinyZ280 PC board. Below is the annotated photograph of the solder side.
+The TinyZ280 [schematic](tinyz280_scm_annotated.pdf) contains annotated Engineering Changes. However, there are additional changes that are not described in the schematic. All the engineering changes are applied at the solder side of the TinyZ280 PC board. Below is the annotated photograph of the solder side.
 
-![ec]()
+![ec](tinyz280_engineering_change.jpg)
 
 Summary of the EC:
 
