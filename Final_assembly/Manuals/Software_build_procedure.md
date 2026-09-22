@@ -22,11 +22,14 @@ The source contains the CCP and BDOS. The custom BIOS for TinyZ280 is appended t
 
 ## CPM3 CPMLDR build procedure
 Unlike the cpm22all which contains the CCP, BDOS, and BIOS, CPM3 cpmldr is a skelton of cpm3 whose only job is to find CPM3.SYS in drive A, load and execute it. LDRBIOS is created according to the CP/M Plus System Guide and helps from members of retrobrewcomputers and VCFed. LDRBIOS is assembled with zmac:
-zmac –rel ldrbios
+
+**zmac –rel ldrbios**
 The resulting ldrbios.rel is transferred into CP/M2.2 environment and linked to execute at location 0x1100
-link cpmldr[L1100]=cpmldr,ldrbios
+
+**link cpmldr[L1100]=cpmldr,ldrbios**
 The resulting cpmldr.com is transferred out of the CP/M2.2 environment to PC where it is converted to Intel Hex format:
-bin2hex /O0x1100 cpmldr.com cpmldr.hex
+
+**bin2hex /O0x1100 cpmldr.com cpmldr.hex**
 The ZZMon Hex loader loads cpmldr.hex to 0x1100 and ZZMon command “C3” copies the data in memory to CF's LBA 0x1-0xF. Conversely ZZMon command “B3” restores data in memory 0x1100-0x2CFF from CF's LBA 0x1-0xF and jumps into 0x1100.
 
 ## LoadnGo build procedure
