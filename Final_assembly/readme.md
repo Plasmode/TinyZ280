@@ -91,7 +91,7 @@ This completes the initialization of a new CF disk.
 ## Design Files
 - TinyZ280 [schematic with annotation](tinyz280_scm_annotated.pdf) of engineering changes
 - [Gerber photoplots](../tinyz280_r0.zip). The boards were manufactured by Seeed Studio
-- Engineering Changes
+- [Engineering Changes](Engineering_change.md)
 - CPLD design file.
   - CPLD design file for 16 megabyte DRAM. Programming file for 16 meg DRAM
   - CPLD design file for 4 megabyte DRAM. Programming file for 4 meg DRAM
