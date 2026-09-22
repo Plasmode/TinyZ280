@@ -62,5 +62,5 @@ readdrq:
     inc d
     jp moresect
 ```
-This is the cold bootstrap code that executes the FIFO instruction stream from CF and creates the code above, byte-by-byte. It is strictly an in-line code with no looping and ends with a jump to the code just created.
+This is the [cold bootstrap code](Software/cfmonldr.zip) that executes the FIFO instruction stream from CF and creates the code above, byte-by-byte. It is strictly an in-line code with no looping and ends with a jump to the code just created.
 
