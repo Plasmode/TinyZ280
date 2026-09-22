@@ -74,6 +74,7 @@ read CF track:0x00 sector:0x00 data not same as previous read
 The address field in the first column is that of the buffer where sector data is stored.
 ```
 **D**
+
 display memory from 4 hexadecimal digits start address to 4 hexadecimal end address. If start address is greater than the end address, only 1 line (16 bytes) of data will be displayed.
 ```
 D 0400 0420
@@ -104,6 +105,7 @@ press Return to execute command
 Test memory from 0x1000 to 0xFFFE. The memory is filled with unique test patterns generated from a seed value. The seed value is changed for each iteration of the test. Each completed iteration will display an 'OK' message. Any keystroke during the test with abort the test and return to command prompt.
 
 **E**
+
 Edit memory specified with the 4 hexadecimal digits value. Exit the edit session with 'X'
 ```
 E 0000
