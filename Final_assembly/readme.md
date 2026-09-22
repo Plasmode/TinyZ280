@@ -27,7 +27,7 @@ This is normal mode of operation. At powerup, the state machine in CPLD initiali
 
 2. The CF loading program loads the monitor, ZZMon, from CF disk into memory and jump to ZZMon. ZZMon will display a sign-on message and wait for user inputs. Refer to ZZMon manual for details.
 
-Here is a more detailed description of the CF bootstrap operation.
+Here is a more detailed description of the [CF bootstrap](CF_bootstrap.md) operation.
 
 ![annotated](tinyz280_annotated.jpg)
 
@@ -41,64 +41,60 @@ TinyZZ Monitor v0.8 3/25/18
 ```
 ZZMon is running at this point. Issue the commands:
 
-c0 (press enter to execute) to copy the cold bootstrap code to CF's boot sector,
+**c0 (press enter to execute)** to copy the cold bootstrap code to CF's boot sector,
 
-c1 (press enter to execute) to copy the ZZMon to CF's LBA sectors 0xF8-0xFF
+**c1 (press enter to execute)** to copy the ZZMon to CF's LBA sectors 0xF8-0xFF
 
 Power down TinyZ280 and insert the mode jumper and re-apply the power. The ZZMon should sign on with the message:
-
+```
 TinyZZ Monitor v0.8 3/25/18
 >
-
+```
 upload the Intel Hex file cpm22all.hex (the program can be found in the Software section below). Issue the command:
 
-c2 (press enter to execute) to copy cpm22 CCP/BDOS/BIOS into LBA sector 0x80-0x92
+**c2 (press enter to execute)** to copy cpm22 CCP/BDOS/BIOS into LBA sector 0x80-0x92
 
 Upload the Intel Hex file cpmldr.hex (the program can be found in the Software section below). Issue the command:
 
-c3 (press enter to execute) to copy CPM3 loader into LBA sector 0x1-0xF
+**c3 (press enter to execute)** to copy CPM3 loader into LBA sector 0x1-0xF
 
 Issue the commands:
 
-xA (press enter to execute) to erase drive A directory
+**xA (press enter to execute) to erase drive A directory**
 
-xB (press enter to execute) to erase drive B directory
+**xB (press enter to execute) to erase drive B directory**
 
-xC (press enter to execute) to erase drive C directory
+**xC (press enter to execute) to erase drive C directory**
 
-xD (press enter to execute) to erase drive D directory
+**xD (press enter to execute) to erase drive D directory**
 
 upload cpm22dri.hex (the program can be found in the Software section below). This is cpm22 distribution files image that'll be loaded into RAM drive (drive E:). When the upload is completed, issue the command:
 
-b2 (press enter to execute) to boot CP/M 2.2. At the CP/M prompt type:
+**b2 (press enter to execute)** to boot CP/M 2.2. At the CP/M prompt type:
 
-e:pip b:=e:*.*[v] to copy cpm22 distribution files from the RAM disk to drive B.
+**e:pip b:=e:*.*[v]** to copy cpm22 distribution files from the RAM disk to drive B.
 
 Press the reset button to exit CP/M 2.2 to ZZMon and upload cpm3dstr.hex (this program can be found int the Software section below). This is the CPM3 distribution files image that'll be loaded into RAM drive (drive E:). The upload will take about 5 minutes. When the upload is completed, issue the command:
 
-b2 (press enter to execute) to boot CP/M 2.2. At the CP/M prompt type:
+**b2 (press enter to execute)** to boot CP/M 2.2. At the CP/M prompt type:
 
-b:pip a:=e:*.*[v] to copy CPM3 distribution files from the RAM disk to drive A.
+**b:pip a:=e:*.*[v]** to copy CPM3 distribution files from the RAM disk to drive A.
 
 Press the reset button to exit CP/M 2.2 to ZZMon and type
 
-b3 (press enter to execute) to boot CP/M 3. At the CP/M prompt type:
+**b3 (press enter to execute)** to boot CP/M 3. At the CP/M prompt type:
 
-pip c:=a:*.*[v] to make a copy fo CP/M 3 distro to drive C:
+**pip c:=a:*.*[v]** to make a copy fo CP/M 3 distro to drive C:
 
 This completes the initialization of a new CF disk.
 
 ## Design Files
-TinyZ280 schematic with annotation of engineering changes
-
-Gerber photoplots. The boards were manufactured by Seeed Studio
-
-Engineering Changes
-
-CPLD design file.
-
-- CPLD design file for 16 megabyte DRAM. Programming file for 16 meg DRAM
-- CPLD design file for 4 megabyte DRAM. Programming file for 4 meg DRAM
+- TinyZ280 schematic with annotation of engineering changes
+- Gerber photoplots. The boards were manufactured by Seeed Studio
+- Engineering Changes
+- CPLD design file.
+  - CPLD design file for 16 megabyte DRAM. Programming file for 16 meg DRAM
+  - CPLD design file for 4 megabyte DRAM. Programming file for 4 meg DRAM
 ### Software
 - ZZMon – monitor for TinyZ280. Assembled with Zilog ZDS v3.68
 - LoadnGo – load file to start up ZZMon in UART bootstrap mode
@@ -110,7 +106,6 @@ CPLD design file.
 - CP/M2.2 DRI distribution image
 - CP/M3 distribution image
 ### Manual
-
 - Getting Started Guide
 - ZZMon operating manual
 - TinyZ280 software build procedures
