@@ -109,4 +109,4 @@ This completes the initialization of a new CF disk.
 - [Getting Started](Manuals/Getting_started.md) Guide
 - [ZZMon operating manual](Manuals/ZZMon_V07.md)
 - TinyZ280 [software build procedures](Manuals/Software_build_procedure.md)
-- Creating a new CF disk for TinyZ280
+- Creating a [new CF disk](Manuals/New_CF_disk.md) for TinyZ280
