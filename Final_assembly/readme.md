@@ -1,5 +1,5 @@
 # Final Step, TinyZ280 Putting it all together
-The previous steps of TinyZ280 development are historical document leading to the final implementation of TinyZ280. This document the finished implementation for the TinyZ280.
+The [previous steps of TinyZ280 development](..README.md) are historical document leading to the final implementation of TinyZ280. This document the finished implementation for the TinyZ280.
 
 ![topview](tinyz280_top.jpg)
 ![backview](tinyz280_back.jpg)
@@ -25,7 +25,7 @@ This is normal mode of operation. At powerup, the state machine in CPLD initiali
 
 1. Z280 executes the cold bootstrap code which copies a small CF loading program into memory and then jump into the CF loading program.
 
-2. The CF loading program loads the monitor, ZZMon, from CF disk into memory and jump to ZZMon. ZZMon will display a sign-on message and wait for user inputs. Refer to ZZMon manual for details.
+2. The CF loading program loads the monitor, ZZMon, from CF disk into memory and jump to ZZMon. ZZMon will display a sign-on message and wait for user inputs. Refer to [ZZMon manual](Manuals/ZZMon_V07.md) for details.
 
 Here is a more detailed description of the [CF bootstrap](CF_bootstrap.md) operation.
 
@@ -93,8 +93,8 @@ This completes the initialization of a new CF disk.
 - [Gerber photoplots](../tinyz280_r0.zip). The boards were manufactured by Seeed Studio
 - [Engineering Changes](Engineering_change.md)
 - CPLD design file.
-  - CPLD design file for 16 megabyte DRAM. Programming file for 16 meg DRAM
-  - CPLD design file for 4 megabyte DRAM. Programming file for 4 meg DRAM
+  - CPLD design file for [16 megabyte DRAM](released_16meg_rtc.zip). 16 meg DRAM [POF programming file](tinyz280_16meg_rtc_pof.zip).
+  - CPLD design file for [4 megabyte DRAM](tinyz280_4meg_rtc.zip). 4 meg DRAM [POF programming file](tinyz280_4meg_rtc_pof.zip).
 ### Software
 - ZZMon – monitor for TinyZ280. Assembled with Zilog ZDS v3.68
 - LoadnGo – load file to start up ZZMon in UART bootstrap mode
