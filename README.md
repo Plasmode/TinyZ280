@@ -26,7 +26,7 @@ The key to the design is Altera's EPM7128 CPLD. Different configurations will re
 
 ### Step 1, UART Bootstrap
 ![uartbootstrap](TinyZ280_UART_bootstrap_topview.jpg)
-The picture above shows what need to be populated to support the UART bootstrap configuration. The serial port is set to 57600 baud, odd parity, 8 data bit, 1 stop. The operating guide for UART Bootstrap configuration is here.
+The picture above shows what need to be populated to support the UART bootstrap configuration. The serial port is set to 57600 baud, odd parity, 8 data bit, 1 stop. This is the operating [guide for UART Bootstrap](UART_Bootstrap_guide.md) configuration.
 
 This is [Altera EPM7128 design for UART bootstrap](TinyZ280_CPLD_tinyzram.pdf) in PDF schematic. This is the [programming file](tinyzram_program_file.zip).
 
