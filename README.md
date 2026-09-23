@@ -22,7 +22,7 @@ The key to the design is Altera's EPM7128 CPLD. Different configurations will re
 ![base](TinyZ280_unpopulated_baseboard.jpg)
 [PC board design files](tinyz280_r0.zip) are here. The pc board is 100mm x 100mm, 1.2mm thick. It was manufactured by Seeed Studio.
 
-Construction notes is here.
+[Construction notes](TinyZ280_Construction.md) is here.
 
 ### Step 1, UART Bootstrap
 ![uartbootstrap](TinyZ280_UART_bootstrap_topview.jpg)
