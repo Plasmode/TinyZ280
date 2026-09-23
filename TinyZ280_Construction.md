@@ -64,3 +64,5 @@
 24. Try cpm22all with CP/M22 distro in CF drive.
 25. Do not populate R11 and R15
 26. Install 5 bypass capacitors, C4-C8
+
+![board](TinyZ280_unpopulated_baseboard.jpg)
