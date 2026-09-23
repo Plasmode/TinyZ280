@@ -103,8 +103,8 @@ This completes the initialization of a new CF disk.
 - CP/M3 [LDRBIOS](Software/ldrbios.zip) to be assembled with ZMAC into LDRBIOS.REL and then linked in CP/M as follow: LINK CPMLDR[L100]=CPMLDR, LDRBIOS
 - CP/M3 [CBIOS3](Software/cbios3.zip) (non-banked) to be assembled with ZMAC into CBIOS3.REL and then linked in CP/M as follow: LINK BIOS3[OS]=CBIOS3,SCB
 - CP/M3 CPMLDR.COM linked to 0x1100. This is an [Intel Hex file](Software/cpmldr_hex.zip) to be loaded by ZZMon at location 0x1100 and copy to CF track 0 using the 'C3' command
-- CP/M2.2 DRI distribution image
-- CP/M3 distribution image
+- [CP/M2.2 DRI distribution](https://github.com/Plasmode/Z80SBC64/blob/main/Software/cpm22dri.zip) image
+- [CP/M3 distribution](https://github.com/Plasmode/Z80SBC64/blob/main/Software/cpm3all.zip) image
 ### Manual
 - [Getting Started](Manuals/Getting_started.md) Guide
 - [ZZMon operating manual](Manuals/ZZMon_V07.md)
