@@ -96,13 +96,13 @@ This completes the initialization of a new CF disk.
   - CPLD design file for [16 megabyte DRAM](released_16meg_rtc.zip). 16 meg DRAM [POF programming file](tinyz280_16meg_rtc_pof.zip).
   - CPLD design file for [4 megabyte DRAM](tinyz280_4meg_rtc.zip). 4 meg DRAM [POF programming file](tinyz280_4meg_rtc_pof.zip).
 ### Software
-- ZZMon – monitor for TinyZ280. Assembled with Zilog ZDS v3.68
-- LoadnGo – load file to start up ZZMon in UART bootstrap mode
-- CP/M2.2, CPM22ALL to be assembled with Zilog ZDS v3.68. This is the entire CP/M2.2 including BDOS, CCP, and BIOS
-- CP/M2.2 Intel Hex load file to be loaded by ZZMon at location 0xDC00-0xFFFF and then copy to CF track 0 using the 'C2' command
-- CP/M3 LDRBIOS to be assembled with ZMAC into LDRBIOS.REL and then linked in CP/M as follow: LINK CPMLDR[L100]=CPMLDR, LDRBIOS
-- CP/M3 CBIOS3 (non-banked) to be assembled with ZMAC into CBIOS3.REL and then linked in CP/M as follow: LINK BIOS3[OS]=CBIOS3,SCB
-- CP/M3 CPMLDR.COM linked to 0x1100. This is an Intel Hex file to be loaded by ZZMon at location 0x1100 and copy to CF track 0 using the 'C3' command
+- [ZZMon](Software/zzmon.zip) – monitor for TinyZ280. Assembled with Zilog ZDS v3.68
+- [LoadnGo](Software/loadngo_run.zip) – load file to start up ZZMon in UART bootstrap mode
+- CP/M2.2, [CPM22ALL](Software/cpm22all_asm_TinyZ280.zip) to be assembled with Zilog ZDS v3.68. This is the entire CP/M2.2 including BDOS, CCP, and BIOS
+- CP/M2.2 [Intel Hex load file](Software/cpm22all_hex_loadfile_TinyZ280.zip) to be loaded by ZZMon at location 0xDC00-0xFFFF and then copy to CF track 0 using the 'C2' command
+- CP/M3 [LDRBIOS](Software/ldrbios.zip) to be assembled with ZMAC into LDRBIOS.REL and then linked in CP/M as follow: LINK CPMLDR[L100]=CPMLDR, LDRBIOS
+- CP/M3 [CBIOS3](Software/cbios3.zip) (non-banked) to be assembled with ZMAC into CBIOS3.REL and then linked in CP/M as follow: LINK BIOS3[OS]=CBIOS3,SCB
+- CP/M3 CPMLDR.COM linked to 0x1100. This is an [Intel Hex file](Software/cpmldr_hex.zip) to be loaded by ZZMon at location 0x1100 and copy to CF track 0 using the 'C3' command
 - CP/M2.2 DRI distribution image
 - CP/M3 distribution image
 ### Manual
