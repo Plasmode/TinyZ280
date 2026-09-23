@@ -23,8 +23,8 @@ G xxxx when done
 TinyLoad has three functions:
 
 1. It clears memory from 0x100 to 0xFFFF to zero.
-2, It expects Intel hex file and save it to memory specified by the load address. It will check every record and print a period (.) if the checksum matches or question mark (?) if the checksum does not match. It will output 'U' for unrecognized record format and 'X' for end of record.
-3, It recognizes the 'G' command and transfers the control to the 4-byte address follow the 'G' command. Please note: the 4-byte address is not echo back on the terminal, only the 'G' followed by a blank is displayed.
+2. It expects Intel hex file and save it to memory specified by the load address. It will check every record and print a period (.) if the checksum matches or question mark (?) if the checksum does not match. It will output 'U' for unrecognized record format and 'X' for end of record.
+3. It recognizes the 'G' command and transfers the control to the 4-byte address follow the 'G' command. Please note: the 4-byte address is not echo back on the terminal, only the 'G' followed by a blank is displayed.
 
 After TinyLoad is running, it can receive one or more hex load files. A small monitor program, Glitchmon.hex , can be loaded. At the end of a successful load operation ('X' at the end of load and no '?' displayed), type 'G 0200' (please note the address '0200' will not echo back) to run Glitchmon. The following sign-on message will be displayed:
 ```
